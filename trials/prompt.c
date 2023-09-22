@@ -11,7 +11,7 @@ int main(int ac, char **argv)
     {
         printf("%s", prompt);
         command = getline(&lineptr, &n, stdin);
-        printf("%s", lineptr);
+        printf("%s", command);
         if(command == -1)
             {
                 printf("Exiting shell\n");
