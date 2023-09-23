@@ -1,21 +1,20 @@
 #include "monty.h"
 
-
-int main(int ac, char **argv)
-{
-    char *prompt = ":) ";
+int main(int ac, char **argv){
+    char *prompt = "$ ";
     char *lineptr = NULL, *lineptr_copy = NULL;
     size_t n = 0;
     ssize_t nchars_read;
     const char *delim = " \n";
-    int num_tokens = 0, counter;
+    int num_tokens = 0;
     char *token;
     int i;
-    char *command_line = NULL;
 
-    stack_t *newNode = (stack_t *)malloc(sizeof(stack_t));
+    /* declaring void variables */
+    (void)ac;
 
-     while (1) {
+    /* Create a loop for the shell's prompt */
+    while (1) {
         printf("%s", prompt);
         nchars_read = getline(&lineptr, &n, stdin);
         /* check if the getline function failed or reached EOF or user use CTRL + D */ 
@@ -56,11 +55,18 @@ int main(int ac, char **argv)
             token = strtok(NULL, delim);
         }
         argv[i] = NULL;
-        for (counter = 0; counter<num_tokens-1; counter++)
-        {
-            printf("%s\n", argv[counter]);
-        }   
-        free(lineptr);     
-    }
+
+        /* execute the command */
+        //execmd(argv);
+        printf("%s\n", argv[0]);
+        
+
+    } 
+
+
+    /* free up allocated memory */ 
+    free(lineptr_copy);
+    free(lineptr);
+
     return (0);
 }
