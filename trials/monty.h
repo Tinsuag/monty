@@ -35,5 +35,5 @@ char *opcode;
 void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-void push(void);
+void push(int *d);
 #endif /*main_h*/

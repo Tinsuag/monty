@@ -1,27 +1,22 @@
 #include "main.h"
 
-int choice()
+char choice(char *command, int d)
 {
-	int choice;
-
 	while (1)
 	{
-		switch (choice)
+		switch (command)
 		{
-			case 1:
-				push(void);
+			case "push":
+				push(d);
 				break;
-			case 2:
+			case "pop":
 				pop(void);
 				break;
-			case 3:
+			case "pall":
 				desplay(void);
 				break;
-			case 4:
-				exit(0);
-
 			default:
-				print("\nInvalid choice",stderr);
+				fprintf(stderr,"Invalid choice");
 		}
 	}
 }
