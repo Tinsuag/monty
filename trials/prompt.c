@@ -59,7 +59,18 @@ int main(int ac, char **argv){
         /* execute the command */
         //execmd(argv);
         printf("%s\n", argv[0]);
-        
+        command = argv[0];
+        switch(argv[0])
+        {
+            case "pall":
+                desplay();
+                break;
+            case "push":
+                push(int d);
+                break;
+            default:
+                printf("error of command");
+        }
 
     } 
 
